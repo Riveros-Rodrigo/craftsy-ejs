@@ -1,0 +1,66 @@
+main{
+    width: 90%;
+    margin: 1rem auto;
+    background-color: #fff;
+    padding: 0.5rem;
+}
+main section .productos{
+    margin: 1rem 0rem;
+}
+main section .productos img{
+    width: 100%;
+}
+main section .productos a{
+    background-color: var(--naranja);
+    padding: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+/* carrusel */
+.home__carousel__article {
+    width: 90%;
+    background-color: #ffffff;
+    height: 220px;
+  }
+  .home__carousel__article img {
+    width: 100%;
+  }
+  .home__carousel__article h4 {
+    margin: 20px 0;
+    text-align: center;
+  }
+@media (min-width:768px){
+    .contenedor-grid{
+        display: grid;
+        grid-template-areas:
+        "productos productos tutorial"
+        "productos productos publicidad"
+        "productos productos none";
+        grid-template-columns: repeat(3,1fr);
+    }
+    main{
+        grid-area: productos;
+    }
+    .aside-tuto{
+        grid-area: tutorial;
+    }
+    .aside-publi{
+        grid-area: publicidad;
+    }
+    .grid-padre-produc{
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
+}
+@media (min-width:900px){
+    .contenedor-grid{
+        width: 70%;
+        margin: auto;
+    }
+}
+
+

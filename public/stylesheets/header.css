@@ -1,0 +1,57 @@
+header{
+    width: 90%;
+    margin: auto;
+    background-color: var(--naranja);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem;
+}
+header nav{
+    display: none;
+    text-transform: uppercase;
+}
+header .hamburguesa{
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+}
+header .login{
+    display: none;
+}
+@media (min-width: 900px){
+    header{
+        width: 70%;
+        margin: auto;
+        justify-content: space-between;
+    }
+    header nav{
+        display: flex;
+    }
+    header .menu{
+        display: flex;
+    }
+    header div nav ul li{
+        list-style: none;
+        display: inline;
+        padding: 1rem;
+    }
+    header div nav ul li a{
+        color: #fff;
+        text-decoration: none;
+    }
+    header .hamburguesa{
+        display: none;
+    }
+    header .login{
+        display: unset;
+    }
+    header .login ul li{
+        display: inline;
+    }
+    header .login ul li a{
+        color: #fff;
+        padding: 0.2rem;
+        text-decoration: none;
+    }
+}
