@@ -1,11 +1,11 @@
 module.exports = {
     register: function(req, res) {
-        return res.render('register', { title: 'Register' });
+        return res.render('register');
     },
     login : function (req,res){
-        return res.render('login', { title: 'Login' });
+        return res.render('login');
     },
     profile : function (req,res){
-        return res.render('profile', { title: 'Profile' });
+        return res.render('profile');
     }
 }
