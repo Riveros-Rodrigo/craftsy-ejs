@@ -1,7 +1,8 @@
-@import './general.css';
-@import './header.css';
-@import './main.css';
-@import './aside.css';
-@import './glider.css';
-@import './forms.css';
-@import './buttons.css';
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
