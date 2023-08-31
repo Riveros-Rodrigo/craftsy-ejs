@@ -1,5 +1,7 @@
 const express = require('express');
-const {detail, add, edit, create, update} = require('../controllers/productsController');
+const {detail, add, edit, create, update, remove} = require('../controllers/productsController');
+const upload = require('../middlewares/upload');
+const productAddValidator = require('../validations/productAddValidator');
 
 const router = express.Router();
 
@@ -8,9 +10,10 @@ const router = express.Router();
 router
     .get('/detail/:id', detail)
     .get('/add', add)
-    .post('/add',create)
+    .post('/add', upload.single('image'), productAddValidator, create)
     .get('/edit/:id', edit)
-    .put('/update/:id',update)
+    .put('/update/:id', upload.single('image'),update)
+    .delete('/remove/:id',remove)
 
 
 module.exports = router

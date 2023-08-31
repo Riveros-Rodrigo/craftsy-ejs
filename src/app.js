@@ -3,11 +3,15 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const session = require('express-session');
+
+const localsCheck = require('./middlewares/localsCheck');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
+const cookieCheck = require('./middlewares/cookieCheck');
 
 const app = express();
 
@@ -22,6 +26,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..','public')));
 
 app.use(methodOverride('_method'));
+app.use(session({
+  secret : "Kr@ftZy 4EVER",
+  resave : true,
+  saveUninitialized : true
+}));
+
+app.use(cookieCheck);
+app.use(localsCheck);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
