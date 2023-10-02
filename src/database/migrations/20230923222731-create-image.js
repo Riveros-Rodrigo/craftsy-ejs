@@ -21,7 +21,8 @@ module.exports = {
           model:{
             tableName: 'Products'
           }
-        }
+        },
+        onDelete : 'cascade' //para poder eliminar productos que este vinculado con otra tabla por fk
       },
       createdAt: {
         allowNull: false,
