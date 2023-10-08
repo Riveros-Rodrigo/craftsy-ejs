@@ -53,20 +53,19 @@
     </div>
     <div class="home__box">
 
-        <main class="home__main">
-            <% products.forEach(product => { %>
-                <% if (product.discount > 0) { %>
-                    <article class="home__main__article">
-                        <img src="/images/<%= product.image ? product.image : 'img-phone-01.jpg'  %>" alt="Imagen phone 1">
-                        <div class="home__main__article--description">
-                            <h4><%= product.name %></h4>
-                            <a href="/products/detail/<%= product.id %>">ver más</a>
-                        </div>
-                        <h4 class="home__main__article--discount"><%= product.discount %>% OFF</h4>
-                    </article>
-                <% } %>
-               
-            <% }) %>
+        <main>
+
+            <% sections.forEach(section => { %>
+                <h3> <%= section.name.toUpperCase()%></h3>
+                <hr>
+                <div class="home__main">
+                    <% section.products.forEach(product => { %>
+                            <%- include('./partials/cardProduct',{
+                                product
+                            }) %>
+                    <% }) %>
+                </div>
+                <% }) %>
         </main>
 
         <aside class="home__aside">
@@ -80,10 +79,7 @@
                             <span><%= tutorial.message %></span>
                         </div>
                     </article>
-
                 <% }) %>
-               
-              
             </section>
             <section class="home__aside__section">
                 <h3>Publicidad</h3>
@@ -97,17 +93,8 @@
     <div class="home__carousel">
         <div class="glider-contain" >
             <div class="glider">
-                <% products.forEach(product => { %>
-                    <article class="home__carousel__article">
-                        <img src="/images/<%= product.image %>" alt="Imagen phone 1">
-                        <div class="home__carousel__article--description">
-                            <h4><%= product.name %></h4>
-                        </div>
-                    </article>
-                <% }) %>
 
-                   
-              
+
             </div>
 
             <button aria-label="Previous" class="glider-prev">«</button>
