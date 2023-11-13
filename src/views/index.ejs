@@ -9,28 +9,31 @@
     <%- include('partials/header') %>
 
     <div class="home__banner">
-        <img id="" src="/images/banner/banner_1.jpg" alt="">
+        <img src="/images/banner/banner_1.jpg" alt="">
     </div>
-    <div class="home__box">
+    <div class="row">
 
-        <main>
+        <main class="col-12 col-md-8">
 
             <% sections.forEach(section => { %>
-                <h3> <%= section.name.toUpperCase()%></h3>
+                <h3 class="mt-5"><%= section.name.toUpperCase() %></h3>
                 <hr>
-                <div class="home__main">
-                    <% section.products.forEach(product => { %>
-                            <%- include('./partials/cardProduct',{
-                                product
-                            }) %>
-                    <% }) %>
-                </div>
+                <section class="row">
+                <% section.products.forEach(product => { %>
+                      <%- include('./partials/cardProduct', {
+                        product
+                      }) %>
+                   
                 <% }) %>
+                </section>
+            <% }) %>
+
+          
         </main>
 
         <aside class="col-12 col-md-4 mt-4">
             <section class="home__aside__section">
-                <!-- <h3>Tutoriales</h3> -->
+               <!--  <h3>Tutoriales</h3> -->
                 <% tutorials.forEach(tutorial => { %>
                     <article class="home__aside__section__article">
                         <img src="/images/<%= tutorial.image %>" alt="Imagen tutorial 1">
@@ -39,7 +42,10 @@
                             <span><%= tutorial.message %></span>
                         </div>
                     </article>
+
                 <% }) %>
+               
+              
             </section>
             <section class="home__aside__section">
                 <h3>Publicidad</h3>
@@ -53,8 +59,10 @@
     <div class="home__carousel">
         <div class="glider-contain" >
             <div class="glider">
+               
 
-
+                   
+              
             </div>
 
             <button aria-label="Previous" class="glider-prev">«</button>
@@ -66,8 +74,9 @@
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
     <script src="/javascripts/glider.js"></script>
-    <script src="/javascripts/gliderCarrusel.js"></script>
+    <script src="/javascripts/gliderCarousel.js"></script>
     <script src="/javascripts/index.js"></script>
+
 </body>
 
 </html>
